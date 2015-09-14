@@ -5,12 +5,12 @@
 	<title>Document</title>
 </head>
 <body>
-	Hello!
-	   <iframe id="l" width="1" height="1" style="visibility: hidden"></iframe>
+	Hello! (You will be redirected after 4 seconds if the app is not installed)
+	<iframe id="l" width="1" height="1" style="visibility: hidden"></iframe>
 	<script type="text/javascript">
 	   window.onload = function () {
             // Deep link to your app goes here
-            document.getElementById("l").src = 'CALSHOW://'; //rikstotofempluss://?raceDate=MjAxNS0wOS0xMA==&trackCode=RjE=&token=MjZNMDdxb29EcDI2MUlCVk1RMzNt&etoto=VHJ1ZQ==';
+            document.getElementById("l").src = 'rikstotofempluss://?raceDate=MjAxNS0wOS0xMA==&trackCode=RjE=&token=MjZNMDdxb29EcDI2MUlCVk1RMzNt&etoto=VHJ1ZQ==';
             var loadedAt = +new Date;
             setTimeout(function () {
                 // Link to the App Store should go here -- only fires if deep link fails 
