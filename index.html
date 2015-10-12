@@ -21,24 +21,47 @@
 			if(iOS){
 				$("#text").text('iOS');
 				var loadedAt = +new Date;
-				
-				window.location.href = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
-				setTimeout(function () {
+				urlExists('rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==', function(exists){
+					if(exists){
+						window.location.href = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';	
+					}
+					else{
+						window.location = 'noapp.html';
+					}
+					
+					/*setTimeout(function () {
 
-	                // Link to the App Store should go here -- only fires if deep link fails 
-	                if (+new Date - loadedAt < 5000) {
-	                    window.location = 'noapp.html';
-	               }
-	           }, 4000);	
+		                // Link to the App Store should go here -- only fires if deep link fails 
+		                if (+new Date - loadedAt < 5000) {
+		                    
+		               }
+		           }, 4000);		*/
+				})
+				
 			}
 			else{
 				$("#text").text('No iOS');
+				 window.location = 'noapp.html';
+				
 			}
             // Deep link to your app goes here
            // 
            //document.getElementById("l").src = 
             
             /**/
+
+            function urlExists(url, callback){
+			  $.ajax({
+			    type: 'HEAD',
+			    url: url,
+			    success: function(){
+			      callback(true);
+			    },
+			    error: function() {
+			      callback(false);
+			    }
+			  });
+			}
         });
 	</script>
 </body>
