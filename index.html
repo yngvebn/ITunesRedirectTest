@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>HELLO!</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-<h1>VENT!</h1>
+	<h1>VENT!</h1>
 	<div id="text"></div>
+	<a href="#" id="clickMe">set to iframe</a>
+	<a href="#" id="direct">Go directly</a>
 	<!-- Hello! (You will be redirected after 4 seconds if the app is not installed) -->
 	<iframe style="border: 1px solid black" id="l" width="100" height="100" src="frame.html">
 		Hello world
 
 	</iframe>
 	<script type="text/javascript">
+	$(function(){
+
+		$("#clickMe").click(function(){
+			document.getElementById("l").src = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
+		});
+
+		$("#direct").click(function(){
+			window.location.href = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
+		});
+	});
 	   window.onload = function () {
 
 	   		document.getElementById("text").innerText = 'LOADED';
             // Deep link to your app goes here
-            window.location.href = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
+           // window.location.href = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
            //document.getElementById("l").src = 
             var loadedAt = +new Date;
-            setTimeout(function () {
+            /*setTimeout(function () {
                 // Link to the App Store should go here -- only fires if deep link fails 
                 if (+new Date - loadedAt < 5000) {
                     window.location = 'noapp.html';
                }
-           }, 4000);
+           }, 4000);*/
         };
 	</script>
 </body>
