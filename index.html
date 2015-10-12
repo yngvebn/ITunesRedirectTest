@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>VENT!</h1>
-
+	<div id="text"></div>
 	<!-- Hello! (You will be redirected after 4 seconds if the app is not installed) -->
 	<iframe style="border: 1px solid black" id="l" width="100" height="100" src="frame.html">
 		Hello world
@@ -14,6 +14,8 @@
 	</iframe>
 	<script type="text/javascript">
 	   window.onload = function () {
+
+	   		document.getElementById("text").innerText = 'LOADED';
             // Deep link to your app goes here
            document.getElementById("l").src = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
             var loadedAt = +new Date;
