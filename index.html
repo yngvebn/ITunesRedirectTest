@@ -11,7 +11,7 @@
 	<a href="#" id="clickMe">set to iframe</a>
 	<a href="#" id="direct">Go directly</a>
 	<!-- Hello! (You will be redirected after 4 seconds if the app is not installed) -->
-	<iframe style="border: 1px solid black" id="l" width="100" height="100" src="frame.html">
+	<iframe style="border: 1px solid black" id="l" width="100" height="100">
 		Hello world
 
 	</iframe>
@@ -19,7 +19,8 @@
 	$(function(){
 
 		$("#clickMe").click(function(){
-			document.getElementById("l").src = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
+			$("#l").attr("src", "frame.html");
+			//document.getElementById("l").src = 'rikstotofempluss://?raceDate=MjAxNS0xMC0wNw==&trackCode=RjE=&token=SFJxYUE1U3BuNEtWWGpMbkduZ0Vq&etoto=VHJ1ZQ==';
 		});
 
 		$("#direct").click(function(){
